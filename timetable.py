@@ -1,5 +1,7 @@
 # Prueba python
 
+from event import Event
+
 internship = "tatin"
 timetableFile = ".\horario.txt"
 timetableFileCSV = ".\horario.csv"
@@ -8,7 +10,7 @@ def readFile(fileName):
     f= open(timetableFile,"r")
     return f.readlines()
 
-def parseHours(time, dateTime):
+def parseHour(time, dateTime):
     n = 0
     hour = []
     for c in time:
@@ -20,30 +22,32 @@ def parseHours(time, dateTime):
     else:
         stringHour =  hour[0] + hour[1] + "." + hour[2] + hour[3]
 
-    stringHour += "," + dateTime ##End date
+    return stringHour
 
-    if(stringHour.split(".")[1] == "30"):
-        stringHour += "," + str(int(stringHour.split(".")[0]) + 1) + ".00"
+def parseNextHour(time, dateTime):
+    stringHour = ""
+    if(time.split(".")[1] == "30"):
+        stringHour += str(int(time.split(".")[0]) + 1) + ".00"
     else:
-        stringHour += "," + stringHour.split(".")[0] + ".30"
+        stringHour += time.split(".")[0] + ".30"
 
     return stringHour
 
 def processLine(line):
-    event = "Becaria," #event name  
+    event = "Becaria" #event name  
     date = line.split(".append")[0].split('"')[1].replace("#", "").replace("_a", "")
     eventDay = date.split("_")[0].split("-")
     eventHour = date.split("_")[1]
     dateTime = eventDay[2] + "/" + eventDay[1] + "/" + eventDay[0]
-    event += eventDay[2] + "/" + eventDay[1] + "/" + eventDay[0] + ","
-    event += parseHours(eventHour, dateTime)
-    return event
+    startHour = parseHour(eventHour, dateTime)
+    endHour = parseNextHour(startHour, dateTime)
+    return Event(event, dateTime, startHour, dateTime, endHour)
 
 def get(timetable):
     text = "Subject, Start Date, Start Time, End Date, End Time,  Description\n"
     for line in timetable:
         if internship in line:
-            text += processLine(line) + "\n"
+            text += processLine(line).toString() + "\n"
     return text
 
 def createFile(file, linesFormatted):
