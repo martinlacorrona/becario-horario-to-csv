@@ -1,0 +1,1234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Horario de la semana actual </title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+
+
+<!-- Barra de Navegación superior -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <!-- Logo -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li id="perfil"><a href="/perfil">Perfil</a></li>
+        <li id="crear-avisos"><a href="/crear-aviso">Crear Avisos</a></li>
+        <li id="ver-avisos"><a href="/ver-avisos">Ver Avisos</a></li>
+        <li id="horario"><a href="/horario">Horario</a></li>
+        <li id="proponer"><a href="/proponer-horario">Proponer Horario</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/identificarse"><span class="glyphicon glyphicon-log-in"></span> Identifícate</a></li>
+        <li><a href="/desconectar"><span class="glyphicon glyphicon-log-in"></span> Desconectar</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container">
+	<script>
+		var mensaje = getUrlParameter('mensaje');
+		var tipoMensaje = getUrlParameter('tipoMensaje');
+		
+		if ( mensaje != ""){
+			if (tipoMensaje == "" ){
+				tipoMensaje = 'alert-info';
+			}
+			$( ".container" )
+				.append("<div class='alert "+tipoMensaje+"'>"+mensaje+" </div>");
+		}
+		
+		function getUrlParameter(name) {
+		    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		    var results = regex.exec(location.search);
+		    return results === null ? '' : 
+		    	decodeURIComponent(results[1].replace(/\+/g, ' '));
+		};
+	</script>
+
+	<!-- Contenido -->
+	
+  <h2>Horario de la semana actual 2019-09-16 </h2>
+    <p>Mostrar: <a href="/horario?tipo=solousuario" class="btn btn-secondary" role="button"> Solo mi horario </a> o <a href="/horario" class="btn btn-secondary" role="button"> el horario de todos </a></p>
+    <p>Horas: <div id="total">18</div></p>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Lunes<br> 2019-09-16</th>
+            <th scope="col">Martes<br> 2019-09-17</th>
+            <th scope="col">Miercoles<br> 2019-09-18</th>
+            <th scope="col">Jueves<br> 2019-09-19</th>
+            <th scope="col">Viernes<br> 2019-09-20</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr>
+            <th scope="row">9:00</th>
+            <td>
+                <div id="2019-09-16_900_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_900_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_900_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_900_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_900_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">9:30</th>
+            <td>
+                <div id="2019-09-16_930_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_930_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_930_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_930_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_930_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">10:00</th>
+            <td>
+                <div id="2019-09-16_1000_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1000_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1000_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1000_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1000_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">10:30</th>
+            <td>
+                <div id="2019-09-16_1030_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1030_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1030_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1030_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1030_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">11:00</th>
+            <td>
+                <div id="2019-09-16_1100_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1100_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1100_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1100_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1100_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">11:30</th>
+            <td>
+                <div id="2019-09-16_1130_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1130_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1130_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1130_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1130_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">12:00</th>
+            <td>
+                <div id="2019-09-16_1200_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1200_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1200_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1200_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1200_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">12:30</th>
+            <td>
+                <div id="2019-09-16_1230_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1230_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1230_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1230_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1230_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">13:00</th>
+            <td>
+                <div id="2019-09-16_1300_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1300_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1300_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1300_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1300_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">13:30</th>
+            <td>
+                <div id="2019-09-16_1330_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1330_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1330_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1330_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1330_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">14:00</th>
+            <td>
+                <div id="2019-09-16_1400_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1400_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1400_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1400_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1400_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">14:30</th>
+            <td>
+                <div id="2019-09-16_1430_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1430_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1430_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1430_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1430_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">15:00</th>
+            <td>
+                <div id="2019-09-16_1500_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1500_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1500_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1500_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1500_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">15:30</th>
+            <td>
+                <div id="2019-09-16_1530_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1530_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1530_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1530_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1530_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">16:00</th>
+            <td>
+                <div id="2019-09-16_1600_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1600_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1600_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1600_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1600_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">16:30</th>
+            <td>
+                <div id="2019-09-16_1630_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1630_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1630_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1630_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1630_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">17:00</th>
+            <td>
+                <div id="2019-09-16_1700_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1700_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1700_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1700_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1700_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">17:30</th>
+            <td>
+                <div id="2019-09-16_1730_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1730_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1730_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1730_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1730_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">18:00</th>
+            <td>
+                <div id="2019-09-16_1800_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1800_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1800_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1800_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1800_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">18:30</th>
+            <td>
+                <div id="2019-09-16_1830_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1830_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1830_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1830_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1830_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">19:00</th>
+            <td>
+                <div id="2019-09-16_1900_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1900_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1900_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1900_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1900_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">19:30</th>
+            <td>
+                <div id="2019-09-16_1930_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_1930_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_1930_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_1930_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_1930_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">20:00</th>
+            <td>
+                <div id="2019-09-16_2000_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_2000_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_2000_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_2000_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_2000_a"></div>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">20:30</th>
+            <td>
+                <div id="2019-09-16_2030_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-17_2030_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-18_2030_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-19_2030_a"></div>
+            </td>
+            <td>
+                <div id="2019-09-20_2030_a"></div>
+            </td>
+        </tr>
+        
+        </tbody>
+    </table>
+
+
+    <script>
+    
+        $("#2019-09-18_900").prop( "checked", true );
+    
+        $("#2019-09-19_900").prop( "checked", true );
+    
+        $("#2019-09-18_930").prop( "checked", true );
+    
+        $("#2019-09-19_930").prop( "checked", true );
+    
+        $("#2019-09-18_1000").prop( "checked", true );
+    
+        $("#2019-09-18_1030").prop( "checked", true );
+    
+        $("#2019-09-18_1100").prop( "checked", true );
+    
+        $("#2019-09-20_1100").prop( "checked", true );
+    
+        $("#2019-09-18_1130").prop( "checked", true );
+    
+        $("#2019-09-20_1130").prop( "checked", true );
+    
+        $("#2019-09-18_1200").prop( "checked", true );
+    
+        $("#2019-09-16_1230").prop( "checked", true );
+    
+        $("#2019-09-18_1230").prop( "checked", true );
+    
+        $("#2019-09-18_1300").prop( "checked", true );
+    
+        $("#2019-09-18_1330").prop( "checked", true );
+    
+        $("#2019-09-19_1330").prop( "checked", true );
+    
+        $("#2019-09-18_1400").prop( "checked", true );
+    
+        $("#2019-09-19_1400").prop( "checked", true );
+    
+        $("#2019-09-16_1430").prop( "checked", true );
+    
+        $("#2019-09-17_1430").prop( "checked", true );
+    
+        $("#2019-09-18_1430").prop( "checked", true );
+    
+        $("#2019-09-19_1430").prop( "checked", true );
+    
+        $("#2019-09-16_1500").prop( "checked", true );
+    
+        $("#2019-09-17_1500").prop( "checked", true );
+    
+        $("#2019-09-18_1500").prop( "checked", true );
+    
+        $("#2019-09-19_1500").prop( "checked", true );
+    
+        $("#2019-09-16_1530").prop( "checked", true );
+    
+        $("#2019-09-17_1530").prop( "checked", true );
+    
+        $("#2019-09-18_1530").prop( "checked", true );
+    
+        $("#2019-09-19_1530").prop( "checked", true );
+    
+        $("#2019-09-16_1600").prop( "checked", true );
+    
+        $("#2019-09-17_1600").prop( "checked", true );
+    
+        $("#2019-09-18_1600").prop( "checked", true );
+    
+        $("#2019-09-16_1630").prop( "checked", true );
+    
+        $("#2019-09-17_1630").prop( "checked", true );
+    
+        $("#2019-09-18_1630").prop( "checked", true );
+    
+    </script>
+
+    <!-- Todos los otros usuarios que hay registrados -->
+    <script>
+        
+            
+                $( "#2019-09-16_900_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-17_900_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_930_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-17_930_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1000_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-17_1000_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1030_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-17_1030_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1100_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-17_1100_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1130_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-17_1130_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1200_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-17_1200_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-20_1200_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1230_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-17_1230_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-20_1230_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1300_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-20_1300_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1330_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-18_1330_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-20_1330_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1400_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-18_1400_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-20_1400_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1430_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-18_1430_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-20_1430_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-16_1500_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-18_1500_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-19_1500_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-18_1530_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-19_1530_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-19_1600_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-19_1630_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-19_1700_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-19_1730_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-19_1800_a" ).append( "<br>Enol" );
+            
+                $( "#2019-09-19_1830_a" ).append( "<br>Enol" );
+            
+        
+            
+                $( "#2019-09-17_900_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_900_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-17_930_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_930_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-17_1000_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1000_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-17_1030_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1030_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1100_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1130_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1200_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1230_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1300_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-17_1330_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1330_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1330_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-17_1400_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1400_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1400_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-17_1430_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1430_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1430_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-17_1500_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1500_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-17_1530_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1530_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1600_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1630_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1700_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1700_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-18_1730_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-20_1730_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-16_1800_a" ).append( "<br>Alejandro" );
+            
+                $( "#2019-09-16_1830_a" ).append( "<br>Alejandro" );
+            
+        
+            
+                $( "#2019-09-17_1100_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1100_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1100_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-17_1130_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1130_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1130_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-17_1200_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1200_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1200_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-17_1230_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1230_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1230_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-17_1300_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1300_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1300_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-17_1330_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1330_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-20_1530_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-16_1600_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-20_1600_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-16_1630_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-20_1630_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-16_1700_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-17_1700_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1700_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-16_1730_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-17_1730_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1730_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1800_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1800_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1830_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1830_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1900_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1900_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-18_1930_a" ).append( "<br>Isabel" );
+            
+                $( "#2019-09-19_1930_a" ).append( "<br>Isabel" );
+            
+        
+            
+                $( "#2019-09-20_1300_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1330_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1400_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1400_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1400_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1430_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1430_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1430_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1500_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1500_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1500_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1530_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1530_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1530_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1600_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1600_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1600_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1630_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1630_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1630_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1700_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-17_1700_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1700_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1700_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1730_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-17_1730_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1730_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-20_1730_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1800_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-17_1800_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1800_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1830_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-17_1830_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-18_1830_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1900_a" ).append( "<br>Carla" );
+            
+                $( "#2019-09-16_1930_a" ).append( "<br>Carla" );
+            
+        
+            
+                $( "#2019-09-18_900_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-19_900_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-18_930_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-19_930_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-18_1000_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-19_1000_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1000_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-18_1030_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-19_1030_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1030_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1100_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1100_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1130_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1130_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1200_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1200_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1230_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1230_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1300_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-18_1300_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-19_1300_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1330_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-18_1330_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-19_1330_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-18_1700_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-19_1700_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-18_1730_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-19_1730_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1800_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1800_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1830_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1830_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1900_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1900_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-17_1930_a" ).append( "<br>Manuel" );
+            
+                $( "#2019-09-20_1930_a" ).append( "<br>Manuel" );
+            
+        
+            
+                $( "#2019-09-16_900_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-17_900_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-19_900_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-20_900_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_930_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-17_930_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-19_930_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-20_930_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1000_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-17_1000_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-19_1000_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-20_1000_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1030_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-17_1030_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-19_1030_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-20_1030_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-18_1100_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-18_1130_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-18_1200_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-20_1200_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-18_1230_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-20_1230_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1300_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-17_1300_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1330_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-17_1330_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1400_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-17_1400_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1430_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-17_1430_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1500_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-20_1500_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1800_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1830_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1900_a" ).append( "<br>Borja" );
+            
+                $( "#2019-09-16_1930_a" ).append( "<br>Borja" );
+            
+        
+            
+                $( "#2019-09-18_900_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-19_900_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_930_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-19_930_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1000_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1030_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1100_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-20_1100_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1130_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-20_1130_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1200_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-16_1230_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1230_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1300_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1330_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-19_1330_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1400_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-19_1400_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-16_1430_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-17_1430_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1430_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-19_1430_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-16_1500_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-17_1500_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1500_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-19_1500_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-16_1530_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-17_1530_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1530_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-19_1530_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-16_1600_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-17_1600_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1600_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-16_1630_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-17_1630_a" ).append( "<br>tatin" );
+            
+                $( "#2019-09-18_1630_a" ).append( "<br>tatin" );
+            
+        
+            
+                $( "#2019-09-16_900_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-17_900_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_900_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_930_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-17_930_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_930_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1000_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-17_1000_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1000_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1030_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1030_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1100_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1100_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1130_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1130_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1200_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1200_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1230_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1230_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1300_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1300_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1330_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1330_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1400_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1400_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-17_1430_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-18_1430_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1430_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-20_1430_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-17_1500_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-18_1500_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-19_1500_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-17_1530_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-18_1530_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1800_a" ).append( "<br>Mario" );
+            
+                $( "#2019-09-16_1830_a" ).append( "<br>Mario" );
+            
+        
+    </script>
+
+<script>
+    $( "#horario" ).addClass( "active" );
+</script>
+
+
+
+
+</div>
+
+
+</body>
+</html>
