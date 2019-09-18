@@ -44,6 +44,15 @@ def processLine(line):
     return Event(event, dateTime, startHour, dateTime, endHour)
 
 """
+Check if there are any events that start at the same time.
+"""
+def checkIfEventIsInAList(event, events):
+    for e in events:
+        if e.startHour == event.startHour:
+            return True
+    return False
+
+"""
 This funtion is for return a dict with a array of events.
 Return example: {
     '19/02/2019' : [Event, Event, Event],
@@ -51,8 +60,25 @@ Return example: {
 }
 """
 def splitEventsInArrayOfDays(events):
-    #TODO
-    return events
+    mergedEvents = []
+    firstIteration = True
+    for event in events:
+        #If is first iteration
+        if firstIteration:
+            startHour = event.startTime
+            endHour = event.endTime
+            firstIteration = False
+
+        else:
+            if event.startTime == endHour:
+                endHour = event.endTime
+            else:
+                mergedEvents.append(Event(event.subject, event.startDate, startHour, event.endDate, endHour))
+                startHour = event.startTime
+                endHour = event.endTime
+    mergedEvents.append(Event(event.subject, event.startDate, startHour, event.endDate, endHour))
+        
+    return mergedEvents
 
 """
 Events is a list of events from only one day, this funtions should
