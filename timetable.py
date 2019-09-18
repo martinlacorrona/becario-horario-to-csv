@@ -60,6 +60,14 @@ Return example: {
 }
 """
 def splitEventsInArrayOfDays(events):
+    #TODO
+    return events
+
+"""
+Events is a list of events from only one day, this funtions should
+merge events if is continue.
+"""
+def mergeContinueEvents(events):
     mergedEvents = []
     firstIteration = True
     for event in events:
@@ -80,14 +88,6 @@ def splitEventsInArrayOfDays(events):
         
     return mergedEvents
 
-"""
-Events is a list of events from only one day, this funtions should
-merge events if is continue.
-"""
-def mergeContinueEvents(events):
-    #TODO
-    return events
-
 def get(timetable):
     text = "Subject, Start Date, Start Time, End Date, End Time,  Description\n"
     for line in timetable:
@@ -104,4 +104,3 @@ def createFile(file, linesFormatted):
 print(" ** Converting file " + timetableFile + " to csv file... **")
 createFile(timetableFileCSV, get(readFile(timetableFile)))
 print(" ** FINISH! You will find in " + timetableFileCSV + " **")
-
