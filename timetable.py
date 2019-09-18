@@ -60,8 +60,14 @@ Return example: {
 }
 """
 def splitEventsInArrayOfDays(events):
-    #TODO
-    return events
+    dic = {}
+    for event in events:
+        if event.startDate in dic.keys():
+            dic[event.startDate].append(event)
+        else:
+            dic[event.startDate] = []
+            dic[event.startDate].append(event)
+    return dic
 
 """
 Events is a list of events from only one day, this funtions should
