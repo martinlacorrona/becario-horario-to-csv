@@ -7,5 +7,5 @@ events = [
     Event("BecariaTest", "18/09/2019" , "12.00", "18/09/2019", "12.30"),
     Event("BecariaTest", "18/09/2019" , "12.30", "18/09/2019", "13.00")
 ]
-for e in splitEventsInArrayOfDays(events):
+for e in mergeContinueEvents(events):
     print(e.toString())
