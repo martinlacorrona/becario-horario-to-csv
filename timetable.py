@@ -95,10 +95,22 @@ def mergeContinueEvents(events):
     return mergedEvents
 
 def get(timetable):
-    text = "Subject, Start Date, Start Time, End Date, End Time,  Description\n"
+    #All list of event
+    eventList = []
     for line in timetable:
         if internship in line:
-            text += processLine(line).toString() + "\n"
+            eventList.append(processLine(line))
+
+    #Process dic with days
+    eventFinalList = []
+    dic = splitEventsInArrayOfDays(eventList)
+    for key in dic:
+        for event in mergeContinueEvents(dic[key]):
+            eventFinalList.append(event)
+
+    text = "Subject, Start Date, Start Time, End Date, End Time,  Description\n"
+    for event in eventFinalList:
+        text += event.toString() + "\n"
     return text
 
 def createFile(file, linesFormatted):
