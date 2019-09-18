@@ -1,4 +1,4 @@
-# Prueba python
+#Timetable for becarios UNIOVI - Ing Informatica
 
 from event import Event
 
@@ -42,6 +42,25 @@ def processLine(line):
     startHour = parseHour(eventHour, dateTime)
     endHour = parseNextHour(startHour, dateTime)
     return Event(event, dateTime, startHour, dateTime, endHour)
+
+"""
+This funtion is for return a dict with a array of events.
+Return example: {
+    '19/02/2019' : [Event, Event, Event],
+    '20/02/2019' : [Event, Event, Event]
+}
+"""
+def splitEventsInArrayOfDays(events):
+    #TODO
+    return events
+
+"""
+Events is a list of events from only one day, this funtions should
+merge events if is continue.
+"""
+def mergeContinueEvents(events):
+    #TODO
+    return events
 
 def get(timetable):
     text = "Subject, Start Date, Start Time, End Date, End Time,  Description\n"
