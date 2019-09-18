@@ -60,6 +60,20 @@ Return example: {
 }
 """
 def splitEventsInArrayOfDays(events):
+    dic = {}
+    for event in events:
+        if event.startDate in dic.keys():
+            dic[event.startDate].append(event)
+        else:
+            dic[event.startDate] = []
+            dic[event.startDate].append(event)
+    return dic
+
+"""
+Events is a list of events from only one day, this funtions should
+merge events if is continue.
+"""
+def mergeContinueEvents(events):
     mergedEvents = []
     firstIteration = True
     for event in events:
@@ -80,19 +94,23 @@ def splitEventsInArrayOfDays(events):
         
     return mergedEvents
 
-"""
-Events is a list of events from only one day, this funtions should
-merge events if is continue.
-"""
-def mergeContinueEvents(events):
-    #TODO
-    return events
-
 def get(timetable):
-    text = "Subject, Start Date, Start Time, End Date, End Time,  Description\n"
+    #All list of event
+    eventList = []
     for line in timetable:
         if internship in line:
-            text += processLine(line).toString() + "\n"
+            eventList.append(processLine(line))
+
+    #Process dic with days
+    eventFinalList = []
+    dic = splitEventsInArrayOfDays(eventList)
+    for key in dic:
+        for event in mergeContinueEvents(dic[key]):
+            eventFinalList.append(event)
+
+    text = "Subject, Start Date, Start Time, End Date, End Time,  Description\n"
+    for event in eventFinalList:
+        text += event.toString() + "\n"
     return text
 
 def createFile(file, linesFormatted):
@@ -104,4 +122,3 @@ def createFile(file, linesFormatted):
 print(" ** Converting file " + timetableFile + " to csv file... **")
 createFile(timetableFileCSV, get(readFile(timetableFile)))
 print(" ** FINISH! You will find in " + timetableFileCSV + " **")
-
