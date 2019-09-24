@@ -1,14 +1,19 @@
 #Timetable for becarios UNIOVI - Ing Informatica
 
 from event import Event
+import webrequest
 
-internship = "tatin"
-timetableFile = ".\horario.txt"
+isNextWeek = True
+user = "tuUser"
+password = "tuPass"
 timetableFileCSV = ".\horario.csv"
 
-def readFile(fileName):
-    f= open(timetableFile,"r")
-    return f.readlines()
+# def readFile(fileName):
+#     f= open(timetableFile,"r")
+#     return f.readlines()
+
+def readWeb(user, password, isNextWeek):
+    return webrequest.autologin(user, password, isNextWeek)
 
 def parseHour(time, dateTime):
     n = 0
@@ -97,8 +102,9 @@ def mergeContinueEvents(events):
 def get(timetable):
     #All list of event
     eventList = []
-    for line in timetable:
-        if internship in line:
+    for unprocessed in timetable:
+        line = unprocessed.decode("utf-8")
+        if user in line:
             eventList.append(processLine(line))
 
     #Process dic with days
@@ -119,6 +125,6 @@ def createFile(file, linesFormatted):
     text_file.close()
 
 #Principal method.
-print(" ** Converting file " + timetableFile + " to csv file... **")
-createFile(timetableFileCSV, get(readFile(timetableFile)))
+print(" ** Loading web and processing to csv file... **")
+createFile(timetableFileCSV, get(readWeb(user, password, isNextWeek)))
 print(" ** FINISH! You will find in " + timetableFileCSV + " **")
