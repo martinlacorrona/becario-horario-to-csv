@@ -3,11 +3,6 @@
 from event import Event
 import webrequest
 
-isNextWeek = True
-user = "tuUser"
-password = "tuPass"
-timetableFileCSV = ".\horario.csv"
-
 # def readFile(fileName):
 #     f= open(timetableFile,"r")
 #     return f.readlines()
@@ -99,7 +94,7 @@ def mergeContinueEvents(events):
         
     return mergedEvents
 
-def get(timetable):
+def get(timetable, user):
     #All list of event
     eventList = []
     for unprocessed in timetable:
@@ -125,6 +120,11 @@ def createFile(file, linesFormatted):
     text_file.close()
 
 #Principal method.
-print(" ** Loading web and processing to csv file... **")
-createFile(timetableFileCSV, get(readWeb(user, password, isNextWeek)))
-print(" ** FINISH! You will find in " + timetableFileCSV + " **")
+def main(timetableFileCSV, user, password, isNextWeek):
+    # isNextWeek = True
+    # user = "tuUser"
+    # password = "tuPass"
+    # timetableFileCSV = ".\horario.csv"
+    print(" ** Loading web and processing to csv file... **")
+    createFile(timetableFileCSV, get(readWeb(user, password, isNextWeek), user))
+    print(" ** FINISH! You will find in " + timetableFileCSV + " **")

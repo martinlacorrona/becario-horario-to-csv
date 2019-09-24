@@ -3,7 +3,8 @@ Convierte el horario descargado de la pagina a un CSV para importar a distintos 
 
 # Steps
 # Version 3.7 de Python
-Descarga e instala pip para instalar paquetes:
+Descarga los paquetes necesarios (ejecutar esto en consola de windows):
 py -m pip install requests
+py -m pip install pyqt5
 
 
