@@ -2,15 +2,7 @@
 
 from event import Event
 import webrequest
-
-isNextWeek = True
-user = "tuUser"
-password = "tuPass"
-timetableFileCSV = ".\horario.csv"
-
-# def readFile(fileName):
-#     f= open(timetableFile,"r")
-#     return f.readlines()
+import sys
 
 def readWeb(user, password, isNextWeek):
     return webrequest.autologin(user, password, isNextWeek)
@@ -124,7 +116,17 @@ def createFile(file, linesFormatted):
     text_file.write(linesFormatted)
     text_file.close()
 
-#Principal method.
-print(" ** Loading web and processing to csv file... **")
-createFile(timetableFileCSV, get(readWeb(user, password, isNextWeek)))
-print(" ** FINISH! You will find in " + timetableFileCSV + " **")
+
+if len(sys.argv) != 5:
+    print(len(sys.argv))
+    print(" ** Use this format: py timetable.py user password exportFile.csv True/False(isNextWeek?) **")
+
+else:
+    #Principal method.
+    user = sys.argv[1]
+    password = sys.argv[2]
+    timetableFileCSV = sys.argv[3]
+    isNextWeek = sys.argv[4]
+    print(" ** Loading web and processing to csv file... **")
+    createFile(timetableFileCSV, get(readWeb(user, password, isNextWeek)))
+    print(" ** FINISH! You will find in " + timetableFileCSV + " **")

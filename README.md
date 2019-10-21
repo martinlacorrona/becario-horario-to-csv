@@ -6,4 +6,7 @@ Convierte el horario descargado de la pagina a un CSV para importar a distintos 
 Descarga e instala pip para instalar paquetes:
 py -m pip install requests
 
-
+# Using
+py .\timetable.py USER PASSWORD FILETOEXPORT.csv False(isNextWeek?)
+py .\timetable.py userPrueba passwordPrueba horarioExportar.csv True
+Sacara el horario de la semana que viene usando True.
